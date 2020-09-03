@@ -4,6 +4,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const isProd = process.env.NODE_ENV === 'production'
+
 const isDev = !isProd
 const filename = (ext) => isDev ? `bundle.${ext}`: `bundle.[hash].${ext}`
 const jsLoaders = () => {
@@ -42,7 +43,7 @@ module.exports = {
     },
     devtool: isDev ? 'source-map' : false,
     devServer: {
-        port: 5000,
+        port: 7000,
         hot: isDev
     },
     plugins: [
